@@ -1,5 +1,6 @@
 var heroX = Number(document.getElementById("hero").getAttribute("x"));
 var heroY = Number(document.getElementById("hero").getAttribute("y"));
+document.addEventListener("keydown", function(e) {
 if(e.keyCode == 37 || e.keyCode == 65){
     heroX -=10;
  document.getElementById("hero").setAttribute("x", heroX)
@@ -21,3 +22,5 @@ if(e.keyCode == 37 || e.keyCode == 65){
    heroY -=10;
  document.getElementById("hero").setAttribute("y", heroY)
   }
+
+})
