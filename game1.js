@@ -1,5 +1,7 @@
 var heroX = Number(document.getElementById("hero").getAttribute("x"));
 var heroY = Number(document.getElementById("hero").getAttribute("y"));
+//var foodX =
+//var foodY =
 document.addEventListener("keydown", function(e) {
 if(e.keyCode == 37 || e.keyCode == 65){
     heroX -=10;
