@@ -1,7 +1,11 @@
 var heroX = Number(document.getElementById("hero").getAttribute("x"));
 var heroY = Number(document.getElementById("hero").getAttribute("y"));
-//var foodX =
-//var foodY =
+var pokeballX = Number(document.getElementById("pokeball").getAttribute("x"));
+var pokebally = Number(document.getElementById("pokeball").getAttribute("y"));
+var eyeX = Number(document.getElementById("eye").getAttribute("x"));
+var eyey = Number(document.getElementById("eye").getAttribute("y"));
+var pLocationX = Number(document.getElementById("location").getAttribute("x"));
+var pLocationY = Number(document.getElementById("location").getAttribute("y"));
 document.addEventListener("keydown", function(e) {
 if(e.keyCode == 37 || e.keyCode == 65){
     heroX -=10;
@@ -26,3 +30,10 @@ if(e.keyCode == 37 || e.keyCode == 65){
   }
 
 })
+
+if (heroX >= pokeballX - 10 && heroX <= pokeballX + 10 && heroY >= pokeballY - 10 && heroY <= pkeballY + 10) {
+            document.getElementById("Player").setAttribute("xlink:href", "images/Enemy.gif")
+            PlayerAnimation = 2;
+            document.getElementById("location").setAttribute("x", NumGen(75, 390));
+            document.getElementById("location").setAttribute("y", NumGen(75, 160));
+}
