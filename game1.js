@@ -1,9 +1,7 @@
 var heroX = Number(document.getElementById("hero").getAttribute("x"));
 var heroY = Number(document.getElementById("hero").getAttribute("y"));
-var foodX = Number(document.getElementById("pokeball").getAttribute("x"));
-var foodY = Number(document.getElementById("pokeball").getAttribute("y"));
-var eyeX = Number(document.getElementById("eye").getAttribute("x"));
-var eyeY = Number(document.getElementById("eye").getAttribute("y"));
+var foodX = Number(document.getElementById("pokeball1").getAttribute("x"));
+var foodY = Number(document.getElementById("pokeball1").getAttribute("y"));
 document.addEventListener("keydown", function(e) {
 if(e.keyCode == 37 || e.keyCode == 65){
     heroX -=10;
