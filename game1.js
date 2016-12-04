@@ -1,7 +1,7 @@
 var heroX = Number(document.getElementById("hero").getAttribute("x"));
 var heroY = Number(document.getElementById("hero").getAttribute("y"));
-var pokeballX = Number(document.getElementById("pokeball").getAttribute("x"));
-var pokebally = Number(document.getElementById("pokeball").getAttribute("y"));
+var foodX = Number(document.getElementById("pokeball").getAttribute("x"));
+var foodY = Number(document.getElementById("pokeball").getAttribute("y"));
 var eyeX = Number(document.getElementById("eye").getAttribute("x"));
 var eyeY = Number(document.getElementById("eye").getAttribute("y"));
 document.addEventListener("keydown", function(e) {
@@ -29,7 +29,8 @@ if(e.keyCode == 37 || e.keyCode == 65){
 
 })
 
-if (heroX >= pokeballX - 10 && heroX <= pokeballX + 10 && heroY >= pokeballY - 10 && heroY <= pkeballY + 10) {;
-            document.getElementById("location").setAttribute("x", NumGen(75, 390));
-            document.getElementById("location").setAttribute("y", NumGen(75, 160));
-}
+if (heroX > foodX && heroX < foodX + 50 && heroY > foodY && heroY < foodY + 50) {
+             document.getElementById("pokeball").setAttribute("x", Number(75, 390));
+             document.getElementById("pokeball").setAttribute("y", Number(75, 160));
+             console.log("overlap")
+ }
