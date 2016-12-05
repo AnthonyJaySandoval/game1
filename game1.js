@@ -1,34 +1,94 @@
-var heroX = Number(document.getElementById("hero").getAttribute("x"));
-var heroY = Number(document.getElementById("hero").getAttribute("y"));
-var foodX = Number(document.getElementById("pokeball1").getAttribute("x"));
-var foodY = Number(document.getElementById("pokeball1").getAttribute("y"));
-document.addEventListener("keydown", function(e) {
-if(e.keyCode == 37 || e.keyCode == 65){
-    heroX -=10;
- document.getElementById("hero").setAttribute("x", heroX)
+function randomNumber(min,max){
+ return Math.floor(Math.random()*(max-min+1)+min);
+}
 
-  }
-  else if(e.keyCode == 39|| e.keyCode == 68){
-    heroX +=10;
- document.getElementById("hero").setAttribute("x", heroX)
+var pc = 0;
+var pokeballText = document.getElementById("pc");
 
+document.addEventListener("keydown", function(r){
+  var hero = document.getElementById("hero");
+  var positionX = Number(hero.getAttribute("x"));
+  var positionY = Number(hero.getAttribute("y"));
 
-  }
-  if(e.keyCode == 40 || e.keyCode == 83){
-    heroY +=10;
- document.getElementById("hero").setAttribute("y", heroY)
+  var pokeball1 = document.getElementById("pokeball1");
+  var pokeball1X = Number(pokeball1.getAttribute("x"));
+  var pokeball1Y = Number(pokeball1.getAttribute("y"));
+  var pokeball1Width = 60;
+  var pokeball1Height = 60;
 
 
-  }
-  else if(e.keyCode == 38|| e.keyCode == 87){
-   heroY -=10;
- document.getElementById("hero").setAttribute("y", heroY)
+  if(r.keyCode == 37){
+    positionX = positionX - 15;
+    hero.setAttribute("x", positionX);
   }
 
-})
+  else if(r.keyCode == 39){
+    positionX = positionX + 15;
+    hero.setAttribute("x", positionX);
+  }
 
-if (heroX > foodX && heroX < foodX + 50 && heroY > foodY && heroY < foodY + 50) {
-             document.getElementById("pokeball").setAttribute("x", Number(75, 390));
-             document.getElementById("pokeball").setAttribute("y", Number(75, 160));
-             console.log("overlap")
- }
+  if(r.keyCode == 38){
+    positionY = positionY - 15;
+    hero.setAttribute("y", positionY);
+  }
+
+  else if(r.keyCode == 40){
+    positionY = positionY + 15;
+    hero.setAttribute("y", positionY);
+  }
+
+  if (positionX > pokeball1X && positionX < pokeball1X + pokeball1Width){
+    if(positionY > pokeball1Y && positionY < pokeball1Y + pokeball1Height){
+      var newP = randomNumber(40,810);
+      pokeball1.setAttribute("x", newP);
+      pokeball1.setAttribute("y", 0);
+      pc += 1;
+    }
+    }
+
+  pokeballText.textContent ="pokeballs obtained: " + pc;
+});
+
+document.addEventListener("keydown", function(a){
+  var hero = document.getElementById("hero");
+  var positionX = Number(hero.getAttribute("x"));
+  var positionY = Number(hero.getAttribute("y"));
+
+  var pokeball2 = document.getElementById("pokeball2");
+  var pokeball2X = Number(pokeball2.getAttribute("x"));
+  var pokeball2Y = Number(pokeball2.getAttribute("y"));
+  var pokeball2Width = 60;
+  var pokeball2Height = 60;
+
+
+  if(a.keyCode == 37){
+    positionX = positionX - 15;
+    hero.setAttribute("x", positionX);
+  }
+
+  else if(a.keyCode == 39){
+    positionX = positionX + 15;
+    hero.setAttribute("x", positionX);
+  }
+
+  if(a.keyCode == 38){
+    positionY = positionY - 15;
+    hero.setAttribute("y", positionY);
+  }
+
+  else if(a.keyCode == 40){
+    positionY = positionY + 15;
+    hero.setAttribute("y", positionY);
+  }
+
+  if (positionX > pokeball2X && positionX < pokeball2X + pokeball2Width){
+    if(positionY > pokeball2Y && positionY < pokeball2Y + pokeball2Height){
+      var newP = randomNumber(45,800);
+      pokeball2.setAttribute("x", newP);
+      pokeball2.setAttribute("y", 0);
+      pc += 1;
+    }
+    }
+
+  pokeballText.textContent ="pokeballs obtained: " + pc;
+});
