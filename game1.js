@@ -39,9 +39,9 @@ document.addEventListener("keydown", function(r){
 
   if (positionX > pokeball1X && positionX < pokeball1X + pokeball1Width){
     if(positionY > pokeball1Y && positionY < pokeball1Y + pokeball1Height){
-      var newP = randomNumber(40,810);
-      pokeball1.setAttribute("x", newP);
-      pokeball1.setAttribute("y", 0);
+      var newP = randomNumber(40,300);
+      pokeball1.setAttribute("x", 0);
+      pokeball1.setAttribute("y", newP);
       pc += 1;
     }
     }
@@ -83,9 +83,9 @@ document.addEventListener("keydown", function(a){
 
   if (positionX > pokeball2X && positionX < pokeball2X + pokeball2Width){
     if(positionY > pokeball2Y && positionY < pokeball2Y + pokeball2Height){
-      var newP = randomNumber(45,800);
-      pokeball2.setAttribute("x", newP);
-      pokeball2.setAttribute("y", 0);
+      var newP = randomNumber(45,300);
+      pokeball2.setAttribute("x", 0);
+      pokeball2.setAttribute("y", newP);
       pc += 1;
     }
     }
